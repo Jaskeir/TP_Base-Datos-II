@@ -3,7 +3,8 @@ Go
 Use VETERINARIA
 Go
 Create Table CLIENTES(
-    DNICLIENTE varchar(8) not null primary key,
+    id_Cliente int not null primary key identity (1, 1)
+    DNICLIENTE varchar(8) not null
     Nombre varchar(50) not null,
     Domicilio varchar(80) not null,
 )
@@ -15,8 +16,9 @@ Create Table MASCOTAS(
 )
 Go
 Create Table TELEFONOS(
+id_Telefono int not null primary key identity (1, 1)
     CodigoMascota int not null foreign key references MASCOTAS(CodigoMascota) dentity (1, 1),
-     Telefono varchar(10) not null,
- Primary Key (CodigoMascota , Telefono)
+    Telefono varchar(10) not null,   
+    Observaciones Varchar(20) not null,
    )
 Go
