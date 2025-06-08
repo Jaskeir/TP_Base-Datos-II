@@ -1,24 +1,20 @@
-Create Database VETERINARIA
-Go
-Use VETERINARIA
-Go
-Create Table CLIENTES(
-    id_Cliente int not null primary key identity (1, 1)
-    DNI_Cliente varchar(8) not null
-    Nombre_Cliente varchar(50) not null,
-    Domicilio_Cliente varchar(80) not null,
+Create Table Dueños(
+    IDDueños int not null primary key identity (1, 1),
+    DNI varchar(8) not null,
+    Nombre varchar(50) not null,
+    Domicilio varchar(80) not null,
 )
-Create Table MASCOTAS(
-    Codigo_Mascota int not null primary key identity (1, 1),
-    Nombre_Mascota varchar(50) not null,
+Go
+Create Table Mascotas(
+    IDMascota int not null primary key identity (1, 1),
+    Nombre varchar(50) not null,
     Especie varchar(50) not null,
-    DNI_Cliente varchar(8) not null foreign key references CLIENTES(DNICLIENTE),
+    IDDueños int not null foreign key references Dueños(IDDueños),
 )
 Go
-Create Table TELEFONOS_CLIENTES(
-id_Telefono int not null primary key identity (1, 1)
-    CodigoMascota int not null foreign key references MASCOTAS(CodigoMascota) dentity (1, 1),
-    Telefono_Cliente varchar(10) not null,   
+Create Table TelefonosDueños(
+    IDTelefono int not null primary key identity (1, 1),
+    IDMascota int not null foreign key references Mascotas(IDMascota),
+    Telefono varchar(10) not null,   
     Observaciones Varchar(20) not null,
    )
-Go
