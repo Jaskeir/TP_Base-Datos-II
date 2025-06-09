@@ -75,3 +75,87 @@ Create Table Turnos(
   IDTelefono int not null,
   Observaciones Varchar(20) not null
 )
+
+
+------------------------------------------------------------------------------------
+--- COPIADO DE DRAW
+
+Table ESPECIALIDADES {
+	IDEspecialidad integer [ pk, increment, not null, unique ]
+	DescripcionEspecialidad varchar [ not null ]
+}
+
+Table CLIENTES {
+	IDCliente integer [ pk, increment, not null, unique ]
+	IDUsuario integer [ not null ]
+	Dni varchar [ not null ]
+	Nombre varchar [ not null ]
+	Domicilio varchar [ not null ]
+	Email varchar [ not null ]
+}
+
+Table TELEFONOS_CLIENTE {
+	IDTelefonoCliente integer [ pk, increment, not null, unique ]
+	IDCliente integer [ not null ]
+	Telefono varchar [ not null ]
+	Observaciones varchar
+}
+
+Table MASCOTAS {
+	IDCliente integer [ not null ]
+	IDMascota integer [ pk, increment, not null, unique ]
+	Nombre varchar [ not null ]
+	Especie varchar [ not null ]
+}
+
+Table VETERINARIOS {
+	IDVeterinario integer [ pk, increment, not null, unique ]
+	IDUsuario integer [ not null ]
+	Dni varchar [ not null ]
+	Nombre varchar [ not null ]
+	Email varchar [ not null ]
+	IDEspecialidad integer [ not null ]
+}
+
+Table TELEFONOS_VETERINARIO {
+	IDTelefonoVeterinario integer [ pk, increment, not null, unique ]
+	IDVeterinario integer [ not null ]
+	Telefono varchar [ not null ]
+	Observaciones varchar
+}
+
+Table SEDES {
+	IDSede integer [ pk, increment, not null, unique ]
+	DireccionSede varchar [ not null ]
+	NombreSede varchar [ not null ]
+}
+
+Table HORARIOS {
+	IDHorario integer [ pk, increment, not null, unique ]
+	DiaSemana varchar [ not null ]
+	HoraDesde time [ not null ]
+	HoraHasta time [ not null ]
+	IDSede integer [ not null ]
+	IDEspecialidad integer [ not null ]
+	DuracionConsulta integer [ not null ]
+}
+
+Table TURNOS {
+	IDTurno integer [ pk, increment, not null, unique ]
+	IDMascotas integer [ not null ]
+	IDHorario integer [ not null ]
+	IDEstado integer [ not null ]
+	FechaHora datetime [ not null ]
+	IDVeterinario integer [ not null ]
+}
+
+Table USUARIOS {
+	IDUsuario integer [ pk, increment, not null, unique ]
+	Email varchar [ not null ]
+	Contraseña varchar [ not null ]
+}
+
+Table ESTADOS {
+	IDEstado integer [ pk, increment, not null, unique ]
+	Estado varchar [ not null ]
+}
