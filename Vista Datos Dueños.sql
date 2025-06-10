@@ -1,8 +1,0 @@
-CREATE VIEW VW_DUEÑOS AS
-SELECT
- d.DNI ,d.Nombre, d.Domicilio ,m.Nombre As 'Nombre Mascota',m.Especie,t.Telefono,t.Observaciones
-FROM Dueños d 
-INNER JOIN 
-Mascotas m ON d.IDDueños = m.IDDueños
-INNER JOIN 
-TelefonosDueños t ON m.IDMascota= t.IDMascota;
