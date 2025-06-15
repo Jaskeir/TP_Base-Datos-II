@@ -46,7 +46,7 @@ Create Table Veterinarios(
 	IDUsuario int not null foreign key references Usuarios(IDUsuario),
 	Dni varchar(50) not null,
 	Nombre varchar(50),
-	IDEspecviaoidad int not null foreign key references Especialidades(IDEspecialidad) 
+	IDEspecialidad int not null foreign key references Especialidades(IDEspecialidad) 
 )
 
 Create Table Horarios(
