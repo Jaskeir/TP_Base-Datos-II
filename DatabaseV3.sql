@@ -19,7 +19,7 @@ Create Table Usuarios(
 	IDUsuario int primary key not null identity(1,1),
 	IDPermiso int  not null foreign key references Permisos(IDPermiso),
 	Email varchar(100) not null,
-	Password varchar(50) not null
+	Pass varchar(50) not null
 )
 
 Create Table Telefonos(
