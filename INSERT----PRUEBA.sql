@@ -3,8 +3,7 @@
 
 -- 1. PERMISOS
 INSERT INTO Permisos(Nombre)
-VALUES ('Administrador'), ('Veterinario'), ('Cliente'), ('Recepcionista'), ('Asistente'),
-       ('Supervisor'), ('Encargado'), ('Soporte'), ('Auditor'), ('Invitado');
+VALUES ('Administrador'), ('Veterinario'), ('Cliente'), ('Soporte');
 
 -- 2. USUARIOS
 INSERT INTO Usuarios(IDPermiso, Email, Password)
@@ -113,16 +112,11 @@ VALUES
 -- 11. ESTADOS
 INSERT INTO Estados(Estado)
 VALUES
-	('Pendiente'),
+	('Disponible'),
 	('Confirmado'),
 	('Cancelado'),
-	('Atendido'),
 	('Reprogramado'),
-	('Ausente'),
-	('En espera'),
-	('En curso'),
-	('Finalizado'),
-	('No asistió');
+	('Ausente');
 
 -- 12. TURNOS
 INSERT INTO Turnos(IDMascota, IDHorario, IDEstado, IDVeterinario, FechaHora)
