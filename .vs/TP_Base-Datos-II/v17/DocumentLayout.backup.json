@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\SQL2022\\TP_Base-Datos-II\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_VeterinarioPorSede.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Vistas\\vw_VeterinarioPorSede.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_TurnosConfirmados.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Vistas\\vw_TurnosConfirmados.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_Disponibilidad.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Vistas\\vw_Disponibilidad.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_Clientes.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Vistas\\vw_Clientes.sql||{B5A506EB-11BE-4782-9A18-21265C2CA0B4}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "vw_TurnosConfirmados.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (61))",
+              "DocumentMoniker": "C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_TurnosConfirmados.sql",
+              "RelativeDocumentMoniker": "Vistas\\vw_TurnosConfirmados.sql",
+              "ToolTip": "C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_TurnosConfirmados.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (61))",
+              "RelativeToolTip": "Vistas\\vw_TurnosConfirmados.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (61))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-06-18T17:34:20.927Z",
+              "EditorCaption": " - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (61))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "vw_VeterinarioPorSede.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (53))",
+              "DocumentMoniker": "C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_VeterinarioPorSede.sql",
+              "RelativeDocumentMoniker": "Vistas\\vw_VeterinarioPorSede.sql",
+              "ToolTip": "C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_VeterinarioPorSede.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (53))",
+              "RelativeToolTip": "Vistas\\vw_VeterinarioPorSede.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (53))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-06-18T17:32:26.383Z",
+              "EditorCaption": " - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (53))"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "vw_Disponibilidad.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (58))",
+              "DocumentMoniker": "C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_Disponibilidad.sql",
+              "RelativeDocumentMoniker": "Vistas\\vw_Disponibilidad.sql",
+              "ToolTip": "C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_Disponibilidad.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (58))",
+              "RelativeToolTip": "Vistas\\vw_Disponibilidad.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (58))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-06-18T17:31:53.635Z",
+              "EditorCaption": " - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (58))"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d114938f-591c-46cf-a785-500a82d97410}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "vw_Clientes.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (54))",
+              "DocumentMoniker": "C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_Clientes.sql",
+              "RelativeDocumentMoniker": "Vistas\\vw_Clientes.sql",
+              "ToolTip": "C:\\SQL2022\\TP_Base-Datos-II\\Vistas\\vw_Clientes.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (54))",
+              "RelativeToolTip": "Vistas\\vw_Clientes.sql - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (54))",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-06-18T17:31:18.517Z",
+              "EditorCaption": " - localhost\\SQLEXPRESS.master (DESKTOP-UGFLFQQ\\tomyb (54))"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
