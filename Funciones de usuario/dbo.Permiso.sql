@@ -1,23 +1,23 @@
-CREATE FUNCTION dbo.Permiso(@permisorequerido int,@idUser int) --el suario tiene permiso para realizar la operacion devuelve 1 sino 0
+CREATE FUNCTION dbo.Permiso(@permisorequerido int,@idUser int)
+--si el suario no existe o no tiene permiso para realizar la operacion devuelve 0 sino 1
 RETURNS INT 
 AS 
 BEGIN 
 DECLARE @AUX INT;
---Verificamos si encuentra algun usuario con ese ID, si encuentra asigna a AUX un 1 sino un 0 
-set @AUX=(SELECT COUNT (IDUsuario) FROM Usuarios Where IDUsuario=@idUser)
-
- IF (@AUX =1 )--Si el usuario existe paso a verificar los permisos 
-
- BEGIN 
-   SET @AUX  = (SELECT IdPermiso FROM Usuarios Where IDUsuario=@idUser); --Seteo Aux con el valor del permiso del usuario 
-   IF (@AUX = @permisorequerido) --Comparo que el permiso requerido y el del usuario sean iguales
+IF NOT EXISTS(SELECT * FROM Usuarios Where IDUsuario=@idUser)
+ BEGIN
+            set @AUX=0;
+			RETURN @AUX ;
+ END
+ SET @AUX  = (SELECT IDPermiso FROM Usuarios Where IDUsuario=@idUser); --Seteo del Aux con el valor del permiso del usuario 
+   IF (@AUX = @permisorequerido) --Comparación de que el permiso requerido y el del usuario sean iguales
    BEGIN 
        SET @AUX =1; 
    END; 
-   else
+   ELSE
    BEGIN 
       SET @AUX =0; 
    END;
- end;
+
  RETURN @AUX; 
 END;

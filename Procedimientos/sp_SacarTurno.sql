@@ -1,63 +1,77 @@
 CREATE PROCEDURE sp_SacarTurno(@idUsuario int,@Mascota int ,@Horario int ,
 	@Estado int ,@Veterinario int ,@FechaHora datetime ) 
 AS
-BEGIN --Comenzamos con el manejo de errores
+BEGIN 
   BEGIN TRY 
    DECLARE @AUX INT;
 
-   Declare @PermisoRequerido int;
+
+   DECLARE @PermisoRequerido INT;
+
+
+   SET @PermisoRequerido=(SELECT IDPermiso FROM Permisos where Nombre='Cliente');
 --solo pueden sacar turno los clientes
-   set @PermisoRequerido=(select IDPermiso From Permisos where Nombre='Cliente');
-   set @AUX =dbo.Permiso(@PermisoRequerido,@idUsuario)
+   SET @AUX =dbo.Permiso(@PermisoRequerido,@idUsuario);
 --se chequea que exista el usuario y tenga los permisos
+
+
     IF (@AUX  =1 )
      BEGIN 
       DECLARE @DNIUser varchar(20);
 	  DECLARE @DNIveterinario varchar(20);
 
-      set @DNIUser=(select Dni from Clientes where IDUsuario=@idUsuario)
-	  set @AUX=(SELECT COUNT (IDVeterinario) FROM VeterinarioS Where IDVeterinario=@Veterinario)
-	  IF (@AUX=1)
+
+      SET @DNIUser=(SELECT Dni FROM Clientes where IDUsuario=@idUsuario);
+	  
+	  IF EXISTS (SELECT * FROM Veterinarios Where IDVeterinario=@Veterinario)
 	    BEGIN
-	    set @DNIveterinario=(select Dni from Veterinarios where IDVeterinario=@Veterinario)
-	     if (@DNIUser=@DNIveterinario)
-          begin
-           RAISERROR ('NO PUEDE SACAR UN TURNO PARA SI MISMO O EL VETERINARIO', 16, 1)
-          end
+	    SET @DNIveterinario=(SELECT Dni FROM Veterinarios Where IDVeterinario=@Veterinario);
+	     IF (@DNIUser=@DNIveterinario)
+          BEGIN
+           RAISERROR ('NO PUEDE SACAR UN TURNO PARA SI MISMO', 16, 1)
+		    RETURN;
+          END
 	   END
 	  ELSE
 	   BEGIN
 	     RAISERROR ('NO EXISTE UN VETERINARIO REGISTRADO CON ESE ID', 16, 1)
+		 RETURN;
 	   END
 
-	  set @AUX=(SELECT COUNT (IDMascota) FROM Mascotas Where IDMascota=@Mascota)
-	    IF (@AUX=0)
+
+	 IF NOT EXISTS (SELECT * FROM Mascotas Where IDMascota=@Mascota)
 	     BEGIN
 	       RAISERROR ('NO EXISTE UNA MASCOTA REGISTRADA CON ESE ID', 16, 1)
+		    RETURN;
 	     END
-	  set @AUX=(SELECT COUNT (IDHorario) FROM Horarios Where IDHorario=@Horario)
-	   IF (@AUX=0)
+	  
+	   IF NOT EXISTS (SELECT * FROM Horarios Where IDHorario=@Horario)
 	     BEGIN
 	       RAISERROR ('NO EXISTE EL HORARIO INDICADO', 16, 1)
+		   RETURN;
 	     END
 
-      set @AUX=(SELECT COUNT (IDEstado) FROM Estados Where IDEstado=@Estado)
-	   IF (@AUX=0)
+
+     
+	  IF NOT EXISTS (SELECT * FROM Estados Where IDEstado=@Estado)
 	     BEGIN
 	       RAISERROR ('NO EXISTE EL ESTADO INDICADO', 16, 1)
+		    RETURN;
 	     END
 	
      end
-   else
-    begin
+   ELSE
+    BEGIN
       RAISERROR ('EL USUARIO NO SE ENCUENTRA REGISTRADO O NO TIENE LOS PERMISOS PARA SACAR UN TURNO', 16, 1)
-    end
+	   RETURN;
+    END
 
-	INSERT INTO Turnos (IDMascota,IDHorario ,IDEstado ,
-	IDVeterinario,FechaHora)
-	Values (@Mascota ,@Horario,@Estado,@Veterinario,@FechaHora)
+
+	INSERT INTO Turnos (IDMascota,IDHorario ,IDEstado ,IDVeterinario,FechaHora)
+	VALUES (@Mascota ,@Horario,@Estado,@Veterinario,@FechaHora)
  END TRY 
  BEGIN CATCH 
   PRINT ERROR_MESSAGE() 
  END CATCH 
 END
+
