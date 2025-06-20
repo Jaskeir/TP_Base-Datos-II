@@ -1,12 +1,14 @@
---Use VETERINARIA
---Go
+Use VETERINARIA
+Go
+
+--SELECT * FROM Sedes
 
 -- 1. PERMISOS
 INSERT INTO Permisos(Nombre)
 VALUES ('Administrador'), ('Veterinario'), ('Cliente'), ('Soporte');
 
 -- 2. USUARIOS
-INSERT INTO Usuarios(IDPermiso, Email, Password)
+INSERT INTO Usuarios(IDPermiso, Email, Clave)
 VALUES	(1, 'admin1@vet.com', 'admin123'),
 		(2, 'vet1@vet.com', 'vet123'),
 		(2, 'vet2@vet.com', 'vet456'),
@@ -66,7 +68,7 @@ VALUES
 	('Rehabilitación', 'Recuperación postoperatoria');
 
 -- 7. VETERINARIOS
-INSERT INTO Veterinarios(IDUsuario, Dni, Nombre, IDEspecviaoidad)
+INSERT INTO Veterinarios(IDUsuario, Dni, Nombre, IDEspecialidad)
 VALUES
 	(2, '30111222', 'Dr. Juan Pérez', 1),
 	(3, '30222333', 'Dra. Ana López', 2),
