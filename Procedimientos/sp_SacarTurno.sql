@@ -66,6 +66,11 @@ BEGIN
 	   RETURN;
     END
 
+	if (@FechaHora<=GETDATE())
+	BEGIN
+	       RAISERROR ('LA FECHA DEL TURNO NO ES VALIDA', 16, 1)
+		    RETURN;
+	     END
 
 	INSERT INTO Turnos (IDMascota,IDHorario ,IDEstado ,IDVeterinario,FechaHora)
 	VALUES (@Mascota ,@Horario,@Estado,@Veterinario,@FechaHora)
