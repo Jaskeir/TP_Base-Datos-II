@@ -1,4 +1,4 @@
-CREATE TRIGGER tr_Eliminar_Turno ON Turnos 
+CREATE TRIGGER trg_Eliminar_Turno ON Turnos 
 INSTEAD OF DELETE 
 AS 
 BEGIN 
