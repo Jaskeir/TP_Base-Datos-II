@@ -1,5 +1,4 @@
 --- Evita que dos usuarios tengan el mismo email. 
-
 CREATE TRIGGER trg_ValidarEmailUnico
 ON Usuarios
 INSTEAD OF INSERT
@@ -17,13 +16,6 @@ BEGIN
     END
 
     -- Si no hay problema, inserta normalmente
-    INSERT INTO Usuarios (IDPermiso, Email, Password)
-    SELECT IDPermiso, Email, Password FROM inserted;
+    INSERT INTO Usuarios (IDPermiso, Email, Clave)
+    SELECT IDPermiso, Email, Clave FROM inserted;
 END;
-
-------------------------------------------------------
---- Ejemplos para ver el funcionamiento del trigger
-------------------------------------------------------
-INSERT INTO Usuarios(IDPermiso, Email, Password)
-VALUES (3, 'nuevo_usuario@vet.com', 'clave123');
-
