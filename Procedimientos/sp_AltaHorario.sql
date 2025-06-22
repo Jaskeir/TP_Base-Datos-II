@@ -106,4 +106,3 @@ WHERE DiaSemana = 'Lunes'
   AND HoraHasta = '12:00'
   AND IDSede = 1
   AND IDEspecialidad = 2;
-

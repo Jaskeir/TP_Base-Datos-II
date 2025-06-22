@@ -7,4 +7,3 @@ BEGIN
 set @Cancelado = (SELECT IdEstado FROM Estados WHERE Estado= 'Cancelado');
 UPDATE Turnos SET IDEstado = @Cancelado WHERE IDTurno IN (SELECT IDTurno FROM deleted);
 END
-

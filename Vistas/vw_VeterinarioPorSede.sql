@@ -12,5 +12,3 @@ JOIN Horarios h ON t.IDHorario = h.IDHorario
 JOIN sedes s ON h.IDSede = s.IDSede
 GROUP BY 
     v.IDVeterinario, v.Nombre, v.IDEspecialidad, s.IDSede, s.NombreSede;
-
-

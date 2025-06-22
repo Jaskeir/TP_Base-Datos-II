@@ -1,5 +1,4 @@
---- Evita que un turno se agende fuera del rango horario permitido.}
-
+--- Evita que un turno se agende fuera del rango horario permitido.
 CREATE TRIGGER trg_ValidarTurnoDentroDeHorario
 ON Turnos
 AFTER INSERT

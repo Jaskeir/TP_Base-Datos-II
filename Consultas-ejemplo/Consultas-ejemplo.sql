@@ -59,7 +59,7 @@ EXEC sp_BuscarVeterinarioPorSede  @IDSede=3
 
 -------------------------------------------
 --Julian
---sp_Telefonos
+--sp_BuscarTelefonosPorMascota
 select * from Telefonos
 EXEC sp_Telefonos @Id=3
 
@@ -70,7 +70,8 @@ select * from Telefonos
 INSERT INTO Telefonos(IDUsuario, Telefono, Observaciones)
        VALUES (3, '1123963585','')
 
-INSERT INTO Telefonos (IDUsuario, Telefono, Observaciones)VALUES (3, '119988766', NULL);
+INSERT INTO Telefonos (IDUsuario, Telefono, Observaciones)
+VALUES (3, '119988766', NULL);
 
 -------------------------------------
 --Marianna
@@ -99,5 +100,11 @@ select * from Turnos
 delete from Turnos where IDTurno=17
 ---------------------------------------------
 
+INSERT INTO Turnos (IDMascota, IDHorario, IDEstado, IDVeterinario, FechaHora)
+VALUES (2, 1, 2, 1, '2025-03-25T08:30:00');
 
-INSERT INTO Turnos (IDMascota, IDHorario, IDEstado, IDVeterinario, FechaHora)VALUES (2, 1, 2, 1, '2025-03-25T08:30:00');delete from Telefonos where IDTelefono=31DROP PROCEDURE sp_AltaHorario Drop TRIGGER trg_DefaultObservacionTelefono
+delete from Telefonos where IDTelefono=31
+
+DROP PROCEDURE sp_AltaHorario 
+
+Drop TRIGGER trg_DefaultObservacionTelefono

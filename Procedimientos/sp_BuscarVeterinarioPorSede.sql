@@ -25,6 +25,3 @@ BEGIN
     ORDER BY 
         v.Nombre;     --ORDENAMOS POR NOMBRE
 END;
-
-
-
