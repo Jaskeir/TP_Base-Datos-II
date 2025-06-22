@@ -26,7 +26,5 @@ BEGIN
         v.Nombre;     --ORDENAMOS POR NOMBRE
 END;
 
--- PRUEBA PARA QUE DEVUELVA TODOS LOS ID SEDE 2
 
-EXEC sp_BuscarVeterinarioPorSede @IDSede = 2;
 

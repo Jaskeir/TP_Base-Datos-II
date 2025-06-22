@@ -59,6 +59,7 @@ BEGIN
     BEGIN
         -- Si no tiene permiso de administrador, se lanza un error
         RAISERROR('El usuario no tiene permiso de administrador.', 16, 1);
+		RETURN;
     END
   END TRY
   BEGIN CATCH
